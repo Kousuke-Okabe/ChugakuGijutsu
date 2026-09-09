@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+sketch="${1:?Specify sketch directory}"
+port="${2:?Specify serial port}"
+bash "$ROOT/scripts/arduino" compile --fqbn arduino:avr:uno --build-path "$ROOT/.build/$sketch" "$ROOT/$sketch"
+bash "$ROOT/scripts/arduino" upload --fqbn arduino:avr:uno --port "$port" --input-dir "$ROOT/.build/$sketch" "$ROOT/$sketch"

@@ -1,0 +1,7 @@
+# OS ごとの開発ツールとビルド生成物
+.tools/
+.arduino/
+.build/
+
+# Windows / Linux ごとに異なる VS Code 設定（ポート・パス・タスクなど）
+.vscode/
